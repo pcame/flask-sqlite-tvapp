@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar usuario</title>
+    <link href="/static/css/register.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="general">
+    <div class="out">
+        <div class="btn-group">
+            <a href="/perfil/{{ session['usuario'] }}" class="btn btn-link">Mi perfil</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-link">Cerrar sesión</a>
+        </div>
+    </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{url_for('index')}}">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="{{url_for('users')}}">Gestión de usuarios</a></li>
+        </ol>
+    </nav>
+    <h1 class="h">Modificar un usuario</h1>
+    <br>
+    <form action="/users/{{ user.usuario }}/modificar" method="POST">
+        <label for="usuario">Usuario</label> <br>
+        <input type="text" id="usuario" name="usuario" value="{{ user.usuario }}" required>
+        <br>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label> <br>
+            <input type="password" class="form-control" id="password" name="password" value="{{ user.password }}"
+                   required> <br>
+        </div>
+
+
+        <label for="nombre">Nombre</label><br>
+        <input type="text" id="nombre" name="nombre" value="{{ user.nombre }}"><br>
+
+        <label for="apellido">Apellido</label><br>
+        <input type="text" id="apellido" name="apellido" value="{{ user.apellido }}"><br>
+
+        <label for="telefono">Teléfono</label> <br>
+        <input type="text" id="telefono" name="telefono" value="{{ user.telefono }}"><br>
+
+        <label for="edad">Edad</label><br>
+        <input type="text" id="edad" name="edad" value="{{ user.edad }}"><br>
+
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email" value="{{ user.email }}"><br>
+
+        <label for="rol">rol</label><br>
+        <select id="rol" name="rol">
+            {% if user.rol == "estandar" %}
+            <option value="estandar" selected>estándar</option>
+            <option value="admin">admin</option>
+            {% else %}
+            <option value="admin" selected>admin</option>
+            <option value="estandar" selected>estándar</option>
+            {% endif %}
+        </select> <br>
+        <br>
+
+        <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+</body>
+</html>

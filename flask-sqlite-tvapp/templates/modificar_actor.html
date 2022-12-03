@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar actor</title>
+    <link href="/static/css/insert.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="general">
+    <div class="out">
+        <div class="btn-group">
+            {% if session['admin'] == True %}
+            <a href="/users/" class="btn btn-link">Gestión de usuarios</a>
+            {% endif %}
+            <a href="/perfil/{{ session['usuario'] }}" class="btn btn-link">Mi perfil</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-link">Cerrar sesión</a>
+        </div>
+    </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{url_for('index')}}">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="{{url_for('actores')}}">Actores</a></li>
+        </ol>
+    </nav>
+    <h1 class="h">Modificar un actor: {{ actor.apellido}}</h1>
+    <br>
+    <form action="/actores/{{ actor.codac }}/modificar" method="POST">
+        <label for="nombre">Nombre</label> <br>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre del actor..." value="{{ actor.nombre }}"> <br>
+
+        <label for="apellido">Apellido</label> <br>
+        <input type="text" id="apellido" name="apellido" placeholder="Apellido del actor..."
+               value="{{ actor.apellido }}"><br>
+
+        <label for="edad">Edad</label><br>
+        <input type="text" id="edad" name="edad" placeholder="Edad del actor..." value="{{ actor.edad }}"><br>
+
+        <label for="ciudad_nacimiento">Ciudad de nacimiento</label><br>
+        <input type="text" id="ciudad_nacimiento" name="ciudad_nacimiento" placeholder="Ciudad..."
+               value="{{ actor.ciudad_nacimiento }}"><br>
+
+        <label for="pais_nacimiento">País de nacimiento</label><br>
+        <input type="text" id="pais_nacimiento" name="pais_nacimiento" placeholder="País..."
+               value="{{ actor.pais_nacimiento }}"><br>
+
+        <label for="img_url">Imagen</label><br>
+        <input type="text" id="img_url" name="img_url" placeholder="Link de la imagen..."
+               value="{{ actor.img_url }}"><br>
+
+        <label for="img_tipo">Tipo de la imagen</label><br>
+        <input type="text" id="img_tipo" name="img_tipo" placeholder="PNG o JPG..." value="{{ actor.img_tipo }}"><br>
+
+        <label for="img_tamaño">Tamaño de la imagen</label><br>
+        <input type="text" id="img_tamaño" name="img_tamaño" placeholder="Tamaño en bytes..."
+               value="{{ actor.img_tamaño }}"><br>
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+</body>
+</html>

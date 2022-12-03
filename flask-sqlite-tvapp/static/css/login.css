@@ -1,0 +1,32 @@
+.general {
+    border-radius: 5px;
+    background-color: seashell;
+    padding: 20px;
+    font-family: Monaco, monospace;
+    text-align: center;
+    font-size: x-large;
+}
+
+
+.form-control {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+a:link {
+    color: darkblue;
+}
+
+a:visited {
+    color: darkred;
+}
+
+a:hover {
+    color: black;
+}
+

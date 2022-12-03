@@ -1,0 +1,68 @@
+.general {
+    border-radius: 5px;
+    background-color: seashell;
+    padding: 20px;
+    font-family: Monaco, monospace;
+    text-align: center;
+    font-size: large;
+}
+
+.h {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+.form-control {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+input[type=text], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.out {
+    text-align: right;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.breadcrumb {
+    margin-left: 20px;
+}
+
+
+a:link {
+    color: darkblue;
+}
+
+a:visited {
+    color: darkred;
+}
+
+a:hover {
+    color: black;
+}

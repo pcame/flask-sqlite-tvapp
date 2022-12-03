@@ -1,0 +1,62 @@
+.g {
+    font-family: Monaco, monospace;
+    background-color: seashell;;
+}
+
+.h {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 70px;
+}
+
+.j {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.i {
+    text-align: end;
+}
+
+thead {
+    font-size: larger;
+}
+
+.tabla {
+    margin: auto;
+    text-align: center;
+    max-width: 600px;
+}
+
+ul.u {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+a:link {
+    color: darkblue;
+}
+
+a:visited {
+    color: darkred;
+}
+
+a:hover {
+    color: black;
+}
+
+img {
+    width: 150px;
+}
+
+.out {
+    text-align: right;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.breadcrumb {
+    margin-left: 20px;
+}

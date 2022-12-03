@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir combinación serie/actor</title>
+    <link href="../static/css/insert.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="general">
+    <div class="out">
+        <div class="btn-group">
+            {% if session['admin'] == True %}
+            <a href="/users/" class="btn btn-link">Gestión de usuarios</a>
+            {% endif %}
+            <a href="/perfil/{{ session['usuario'] }}" class="btn btn-link">Mi perfil</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-link">Cerrar sesión</a>
+        </div>
+    </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{url_for('index')}}">Inicio</a></li>
+        </ol>
+    </nav>
+    <h1 class="h">Añadir una combinación de una serie con un actor</h1>
+    <br>
+    <form action="/insert_serieactor" method="POST">
+        <label for="codser">Serie</label><br>
+        <select id="codser" name="codser">
+            {% for serie in datos %}
+            <option value="{{serie.codser}}">{{serie.nombre}}</option>
+            {% endfor %}
+        </select><br>
+        <br>
+        <label for="codac">Actor</label><br>
+        <select id="codac" name="codac">
+            {% for actor in datos2 %}
+            <option value="{{actor.codac}}">{{actor.nombre}} {{actor.apellido}}</option>
+            {% endfor %}
+        </select><br>
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+</div>
+</body>
+</html>

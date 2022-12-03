@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios</title>
+    <link href="../static/css/series.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body class="g">
+<div class="out">
+    <div class="btn-group">
+        <a href="/perfil/{{ session['usuario'] }}" class="btn btn-link">Mi perfil</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-link">Cerrar sesión</a>
+    </div>
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{url_for('index')}}">Inicio</a></li>
+    </ol>
+</nav>
+
+<h1 class="h">Usuarios</h1>
+<br>
+<br>
+<h4 class="j"><a href="{{ url_for('insert_user') }}">Añadir usuario</a></h4>
+<br>
+<br>
+
+{% for user in datos %}
+<div class="tabla">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col" colspan="2" id="{{user.usuario}}">{{user.usuario}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">Nombre</th>
+            <td>{{user.nombre}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Apellido</th>
+            <td>{{user.apellido}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Teléfono</th>
+            <td>{{user.telefono}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Edad</th>
+            <td>{{user.edad}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td>{{user.email}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Rol</th>
+            <td>{{user.rol}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/users/{{ user.usuario }}/eliminar" class="btn btn-outline-dark"
+       onclick="return confirm('¿Está seguro/a de que desea eliminar este usuario?')">Eliminar</a>
+    <a href="/users/{{ user.usuario }}/modificar" class="btn btn-outline-dark">Modificar</a>
+</div>
+<br>
+<br>
+<br>
+{% endfor %}
+</body>
+</html>

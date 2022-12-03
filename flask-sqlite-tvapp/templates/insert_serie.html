@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir serie</title>
+    <link href="../static/css/insert.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="general">
+    <div class="out">
+        <div class="btn-group">
+            {% if session['admin'] == True %}
+            <a href="/users/" class="btn btn-link">Gestión de usuarios</a>
+            {% endif %}
+            <a href="/perfil/{{ session['usuario'] }}" class="btn btn-link">Mi perfil</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-link">Cerrar sesión</a>
+        </div>
+    </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{url_for('index')}}">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="{{url_for('actores')}}">Series</a></li>
+        </ol>
+    </nav>
+    <h1 class="h">Añadir una nueva serie</h1>
+    <br>
+    <form action="/series/insert_serie" method="POST">
+        <label for="nombre">Título</label> <br>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre de la serie..."> <br>
+
+        <label for="genero">Género</label> <br>
+        <input type="text" id="genero" name="genero" placeholder="Género de la serie..."><br>
+
+        <label for="canal_emision">Canal de emisión</label><br>
+        <input type="text" id="canal_emision" name="canal_emision" placeholder="Canal donde se emite..."><br>
+
+        <label for="emision">Emisión</label><br>
+        <select id="emision" name="emision">
+            <option value="Continúa">Continúa</option>
+            <option value="Finalizada">Finalizada</option>
+        </select> <br>
+
+        <label for="inicio">Inicio</label><br>
+        <input type="text" id="inicio" name="inicio" placeholder="Año en que empezó..."><br>
+
+        <label for="inicio">Fin</label><br>
+        <input type="text" id="fin" name="fin" placeholder="Año en que acabó..."><br>
+
+        <label for="puntuacion">Puntuación</label><br>
+        <input type="text" id="puntuacion" name="puntuacion" placeholder="Puntuación de 0 a 10"><br>
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+</body>
+</html>

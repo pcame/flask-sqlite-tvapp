@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+    <link href="../static/css/series.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="g">
+
+<div class="out">
+    <div class="btn-group">
+        {% if session['admin'] == True %}
+        <a href="/users/" class="btn btn-link">Gestión de usuarios</a>
+        {% endif %}
+        <a href="{{ url_for('logout') }}" class="btn btn-link">Cerrar sesión</a>
+    </div>
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{url_for('index')}}">Inicio</a></li>
+    </ol>
+</nav>
+<div class="tabla">
+    <h1 class="j">Mi perfil</h1>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col" colspan="2">{{datos.usuario}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">Nombre</th>
+            <td>{{datos.nombre}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Apellido</th>
+            <td>{{datos.apellido}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Edad</th>
+            <td>{{datos.edad}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Teléfono</th>
+            <td>{{datos.telefono}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td>{{datos.email}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+
+    <button type="button" class="btn btn-outline-dark"
+            onclick="return confirm('¿Está seguro/a de que desea su cuenta?')">
+        <a href="/perfil/{{ datos.usuario }}/eliminar">Eliminar cuenta</a></button>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+body {
+    font-family: Monaco, monospace;
+}
+
+.colorfondo {
+    background-color: seashell;
+}
+
+.fondo {
+    background-image: url("../img/television.png");
+    background-size: 150px;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.series {
+    background-color: darkgrey;
+    width: 800px;
+    height: 150px;
+    margin: auto;
+    color: seashell;
+    font-size: 55px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+}
+
+.actores {
+    background-color: lightslategray;
+    width: 800px;
+    height: 150px;
+    margin: auto;
+    color: seashell;
+    font-size: 55px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+}
+
+.out {
+    text-align: right;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+a:link {
+    color: seashell;
+    text-decoration: none;
+}
+
+a:visited {
+    color: seashell;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightyellow;
+    text-decoration: none;
+}
+
+
+
+
+

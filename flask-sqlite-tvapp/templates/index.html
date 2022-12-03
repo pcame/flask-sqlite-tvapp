@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Televisión británica</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="colorfondo">
+    <div class="out">
+        <div class="btn-group">
+            {% if session['admin'] == True %}
+            <a href="/users/" class="btn btn-secondary">Gestión de usuarios</a>
+            {% endif %}
+            <a href="/perfil/{{ session['usuario'] }}" class="btn btn-secondary">Mi perfil</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary">Cerrar sesión</a>
+        </div>
+    </div>
+    <h1 class="titulo">Televisión británica</h1>
+    <div class="fondo">
+
+        <br>
+        <br>
+        <br>
+        <a class="series" href="{{url_for('series')}}"><br>Series de televisión</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a class="actores" href="{{url_for('actores')}}"><br>Actores</a>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+
+</body>
+</html>
